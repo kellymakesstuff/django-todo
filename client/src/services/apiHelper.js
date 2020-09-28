@@ -3,8 +3,8 @@ import axios from "axios"
 let apiUrl
 
 const apiUrls = {
-  production: "",
-  development: "http://localhost:8000/api"
+  production: "http://127.0.0.1:8000/api",
+  development: "http://127.0.0.1:8000/api"
 }
 
 if (window.location.hostname === "localhost") {

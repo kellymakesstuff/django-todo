@@ -1,8 +1,8 @@
-import api from "./apiSetup"
+import api from "./apiHelper"
 
 export const getTaskList = async () => {
   try {
-    const response = await api.get("/task-list")
+    const response = await api.get("/task-list/")
     return response.data
   } catch (error) {
     throw error
