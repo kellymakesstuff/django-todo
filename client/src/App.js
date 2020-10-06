@@ -20,8 +20,15 @@ export default function App() {
   }, [])
 
   return <>
-    <div className="task-container">
-      {taskFullList && taskFullList.map(indTask => <Task indTask={indTask} />)}
-    </div >
+    <div className="full-container">
+      <div className="new-task-container">
+
+      </div>
+
+
+      <div className="task-container">
+        {taskFullList && taskFullList.map(indTask => <Task indTask={indTask} />)}
+      </div >
+    </div>
   </>
 }
