@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { getTaskList } from "./services/tasks"
 import api from "./services/apiHelper"
 import "./App.css"
+import Task from './shared/Task'
 
 export default function App() {
 
@@ -20,8 +21,7 @@ export default function App() {
 
   return <>
     <div className="task-container">
-      {taskFullList && taskFullList.map(task => <div key={task.id} className={`completed-${task.completed.toString()}`}>{task.title}</div>)
-      }
+      {taskFullList && taskFullList.map(indTask => <Task indTask={indTask} />)}
     </div >
   </>
 }
