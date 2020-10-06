@@ -19,35 +19,41 @@
   font-size: 3rem;
   display: flex;
   flex-flow: row;
-  border: 1px solid #fff0f0;
   border-radius: 50px;
   text-align: center;
   align-items: center;
   justify-content: center;
   padding: 1rem;
   margin: .4rem;
-  background-color: #fff0f0;
   width: 70%;
   flex-grow: 1;
 }
 
 .completed-true {
-  color: #ebd4d4;
+  color: #a3d8f4;
+  border: 1px solid #a3d8f4;
+  background-color: #ffffff;
   text-decoration: line-through;
   order: 2;
 }
 
 .completed-false {
-  color: #463333;
+  border: 1px solid #a3d8f4;
+  background-color: #a3d8f4;
+  color: #ffffff;
   order: 1;
 
 }
 
 #top-input {
-  background-color: blue;
+  background-color: #9ab3f5;
+  border: 1px solid #9ab3f5;
+  color: #ffffff;
   margin-bottom: 2rem;
   width: 50%;
 
 }
 
 /* colors: https://colorhunt.co/palette/206782 */
+/* secondary: https://colorhunt.co/palette/213437 */
+/* third: https://colorhunt.co/palette/213441 */

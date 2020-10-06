@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react'
-import { getTaskList } from "./services/tasks"
+import { getTaskList, createTask } from "./services/tasks"
 import api from "./services/apiHelper"
 import "./App.css"
 import Task from './shared/Task'
 
 export default function App() {
 
-  let [taskFullList, setTaskFullList] = useState(null)
+  let [taskFullList, setTaskFullList] = useState([])
   let [newTask, setNewTask] = useState(null)
 
   let grabTaskList = async () => {
@@ -23,6 +23,12 @@ export default function App() {
     console.log(newTask)
   }
 
+  let handleNewTask = () => {
+    createTask(newTask)
+    taskFullList.push(newTask)
+    console.log(taskFullList)
+  }
+
   useEffect(() => {
     grabTaskList()
 
@@ -33,7 +39,7 @@ export default function App() {
       <div className="task-container">
 
         <input id="top-input" placeholder="what's next?" onChange={e => handleChange(e)} />
-
+        <button onClick={() => handleNewTask()}>add</button>
 
         {taskFullList && taskFullList.map(indTask => <Task indTask={indTask} />)}
       </div >
