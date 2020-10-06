@@ -1,12 +1,53 @@
+.full-container {
+  border: 1px solid purple;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 10rem;
+}
+
 .task-container {
-  margin: 0 auto;
-  color: red;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-items: center;
+}
+
+.indTask, input {
+  font-size: 3rem;
+  display: flex;
+  flex-flow: row;
+  border: 1px solid #fff0f0;
+  border-radius: 50px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  margin: .4rem;
+  background-color: #fff0f0;
+  width: 70%;
+  flex-grow: 1;
 }
 
 .completed-true {
-  color: blue;
+  color: #ebd4d4;
+  text-decoration: line-through;
+  order: 2;
 }
 
 .completed-false {
-  color: orange;
+  color: #463333;
+  order: 1;
+
 }
+
+#top-input {
+  background-color: blue;
+  margin-bottom: 2rem;
+  width: 50%;
+
+}
+
+/* colors: https://colorhunt.co/palette/206782 */
