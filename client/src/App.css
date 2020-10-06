@@ -1,0 +1,12 @@
+.task-container {
+  margin: 0 auto;
+  color: red;
+}
+
+.completed-true {
+  color: blue;
+}
+
+.completed-false {
+  color: orange;
+}

@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { getTaskList } from "./services/tasks"
 import api from "./services/apiHelper"
+import "./App.css"
 
 export default function App() {
 
@@ -9,11 +10,18 @@ export default function App() {
   let grabTaskList = async () => {
     let dataGrab = await getTaskList()
     console.log(dataGrab)
+    setTaskFullList(dataGrab)
   }
 
-  return (
-    <div>
-      <button onClick={() => grabTaskList()}>get task list</button>
-    </div>
-  )
+  useEffect(() => {
+    grabTaskList()
+
+  }, [])
+
+  return <>
+    <div className="task-container">
+      {taskFullList && taskFullList.map(task => <div key={task.id} className={`completed-${task.completed.toString()}`}>{task.title}</div>)
+      }
+    </div >
+  </>
 }
