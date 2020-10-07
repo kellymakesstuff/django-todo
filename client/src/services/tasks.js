@@ -24,7 +24,7 @@ export const createTask = async (taskData) => {
     throw error
   }
 }
-export const updateTask = async (taskData, id) => {
+export const updateTask = async (id, taskData) => {
   try {
     const response = await api.post(`/task-update/${id}/`, taskData)
     return response.data

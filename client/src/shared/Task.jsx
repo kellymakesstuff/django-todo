@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { deleteTask } from '../services/tasks'
+import { updateTask, deleteTask } from '../services/tasks'
 
 export default function Task({ indTask }) {
 
@@ -8,10 +8,19 @@ export default function Task({ indTask }) {
 
 
   let handleCompClick = () => {
+    let currId = parseInt(indTask.id)
     if (completedToggle === true) {
       setCompletedToggle(false)
+      console.log(currId)
+      updateTask(currId, {
+        "completed": false,
+      })
     } else {
       setCompletedToggle(true)
+      console.log(currId)
+      updateTask(currId, {
+        "completed": true,
+      })
     }
   }
 
