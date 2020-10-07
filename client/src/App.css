@@ -27,7 +27,15 @@
   margin: .4rem;
   width: 70%;
   flex-grow: 1;
+  transition: all .5s ease;
 }
+
+.indTask:hover {
+  background-color: #b9fffc;
+  border: 1px solid #b9fffc;
+  transition: all .4s ease;
+}
+
 .input-container {
   display: flex;
   flex-flow: row;
