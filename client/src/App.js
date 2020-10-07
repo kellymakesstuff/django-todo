@@ -3,6 +3,7 @@ import { getTaskList, createTask } from "./services/tasks"
 import api from "./services/apiHelper"
 import "./App.css"
 import Task from './shared/Task'
+import Header from './shared/Header'
 
 export default function App() {
 
@@ -24,9 +25,9 @@ export default function App() {
   }
 
   let handleNewTask = () => {
+
+    setTaskFullList([...taskFullList, newTask])
     createTask(newTask)
-    taskFullList.push(newTask)
-    console.log(taskFullList)
   }
 
   useEffect(() => {
@@ -36,10 +37,15 @@ export default function App() {
 
   return <>
     <div className="full-container">
-      <div className="task-container">
+      <Header />
 
-        <input id="top-input" placeholder="what's next?" onChange={e => handleChange(e)} />
+      <div className="input-container">
+        <label for="next">what's next?</label>
+        <input name="next" id="top-input" placeholder="what's next?" onChange={e => handleChange(e)} />
         <button onClick={() => handleNewTask()}>add</button>
+      </div>
+
+      <div className="task-container">
 
         {taskFullList && taskFullList.map(indTask => <Task indTask={indTask} />)}
       </div >
