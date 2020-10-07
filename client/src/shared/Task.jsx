@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { deleteTask } from '../services/tasks'
 
 export default function Task({ indTask }) {
 
@@ -14,11 +15,16 @@ export default function Task({ indTask }) {
     }
   }
 
+  let handleDelete = () => {
+    deleteTask(`${indTask.id}`)
+  }
 
   return <>
     <div key={indTask.id}
       className={`indTask completed-${completedToggle}`}
       onClick={() => handleCompClick()}>
-      {indTask.title}</div>
+      {indTask.title}
+      {/* <button onClick={() => { handleDelete() }}>delete</button> */}
+    </div>
   </>
 }
